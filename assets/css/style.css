@@ -1,0 +1,202 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+  font-family: "Miriam Libre", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgba(13, 4, 61, 0.712);
+}
+
+header{
+    background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.705)); 
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(2px);
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:15px;
+
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+
+
+/* section1------------------------------------------------ */
+.sessao-1{
+    background-image: url(../img/img-section1.png);
+    background-repeat: no-repeat;
+}
+
+p{
+    padding: 210px;
+}
+
+
+/* section2------------------------------------ */
+.sessao-2{
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(../img/img-fundo.png);
+  background-repeat: no-repeat;
+}
+
+
+h1{
+    text-align: center;
+    color: white;
+    padding-bottom: 50px;
+    font-size: 40px;
+}
+.wrapper {
+  max-width: 1150px;
+  width: 100%;
+  position: relative;
+}
+.wrapper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background-image: linear-gradient(to right, white, transparent);
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.466)404;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  z-index: 99;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper i:first-child{
+  left: -22px;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+
+.carousel::-webkit-scrollbar {
+  display: none;
+  
+}
+.carousel.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  width: 240px;
+  height: 350px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  margin: 15px;
+  padding-bottom: 10px;
+  flex-direction: column;
+  border-radius: 0px 20px 0px 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.527);
+  transition: 0.5s;
+}
+
+.card:hover{
+    scale:1.03;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.644);
+}
+.carousel .card .img {
+  height: 151px;
+  width: 100%;
+
+}
+.card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px 20px 0px 20px;
+}
+.carousel .card h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+
+.card a{
+    padding: 10px;
+    border: 0.5px solid rgb(51, 11, 97) ;
+    color:  rgb(51, 11, 97) ;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.card a:hover{
+    background-color: #6a6d7852;
+    border-radius: 20px;
+    
+}
+.carousel .card span {
+  color: #6A6D78;
+  font-size: 1.20rem;
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
