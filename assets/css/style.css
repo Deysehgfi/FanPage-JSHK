@@ -9,10 +9,13 @@
 
 html{
     scroll-behavior: smooth;
+    cursor: url('../img/Hakojoudai-cursor.png'), auto ;
+    /* img curso:50px 50px */
 }
 
 body{
     background-color: rgba(13, 4, 61, 0.712);
+ 
 }
 
 header{
